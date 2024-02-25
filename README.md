@@ -48,7 +48,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](img/Home.png)
 
 This project is a school project for an E-Commerce site in PHP. We started with a site for buying and selling online cards (eg Pokemon, Yu-Gi-Oh! ...)
 
