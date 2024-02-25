@@ -7,7 +7,7 @@
     <img src="img/fav.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">README BDM-Comertial</h3>
+  <h3 align="center">README BDM-commercial</h3>
 
   <p align="center">
     <br />
