@@ -52,10 +52,18 @@
 
 This project is a school project for an E-Commerce site in PHP. We started with a site for buying and selling online cards (eg Pokemon, Yu-Gi-Oh! ...)
 
-repartition :
+Repartition :
 * Popiflut : Back
 * BaptSoulier : Front
 * Akemi-ito : BDD / Script-SQL
+
+
+
+All link of database (MCD) :
+
+
+[![MCD][MCD]](img/Home.png)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -124,3 +132,4 @@ Steps required to make the project work
 [JS-url]: https://www.javascript.com
 
 [product-screenshot]: img/Home.png
+[MCD]: 
