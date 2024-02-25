@@ -40,7 +40,6 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul>
     </li>
-    <li><a href="#license">License</a></li>
   </ol>
 </details>
 
