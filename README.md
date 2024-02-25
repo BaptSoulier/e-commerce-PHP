@@ -10,7 +10,6 @@
   <h3 align="center">README BDM-Comertial</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
     <br />
     <a href="https://github.com/BaptSoulier/e-commerce-PHP/tree/master"><strong>Explore the docs »</strong></a>
     <br />
