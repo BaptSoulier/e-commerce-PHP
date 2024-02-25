@@ -86,7 +86,7 @@ Steps required to make the project work
 
   ```sh
   Username = root
-  Password = &#x2612;
+  Password = ❌
   Required name for the database: " bdd_php "
   ```
 
