@@ -30,9 +30,6 @@ if(isset($_SESSION['username'])) {
         $profile_id = $row['ID'];
         $pq = $connexion->real_escape_string($_GET['pq']);
         $pid = $connexion->real_escape_string($_GET['pid']);
-        echo ''.$pid.'   /    ';
-        echo ''.$pq.'    /    ';
-        echo ''.$profile_id.'';
 
         // Insérer l'ID du profil dans une autre table (à remplacer avec le nom de votre table)
         $insert_query = "INSERT INTO cart (UID, PID, Quantity) VALUES ('$profile_id', '$pid', '$pq')";
