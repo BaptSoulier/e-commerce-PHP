@@ -26,7 +26,7 @@
 							    if ($result->num_rows == 1) {
 							        // Récupération du mot de passe hashé depuis la base de données
 							        $row = $result->fetch_assoc();
-							        $mot_de_passe_hash = $row["Pw"];
+							        $mot_de_passe_hash = $row["Pw"];	
 
 							        // Vérification du mot de passe
 							        if (password_verify($mot_de_passe, $mot_de_passe_hash)) {
@@ -126,6 +126,16 @@
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 										<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
+										<?php
+                                            // Démarrer la session
+                                            session_start();
+
+                                            // Vérifier si l'utilisateur est connecté
+                                            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                                                echo '<li class="nav-item"><a class="nav-link" href="profil.php">Profil</a></li>';
+                                                echo '<li class="nav-item"><a class="nav-link" href="logout.php">Déconnexion</a></li>';
+                                            }
+                                        ?>
 									</ul>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>

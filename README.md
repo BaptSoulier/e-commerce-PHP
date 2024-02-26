@@ -31,13 +31,22 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Built With</a></li>	
       </ul>
+	<ul>
+	    <li><a href="#repartition">Repartition</a></li>
+	</ul>
+	    <ul>
+	    <li><a href="#all-link-of-database">All link of database (MCD)</a></li>
+	</ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+	    <ul>
+        <li><a href="#instalaton">Instalaton</a></li>
       </ul>
     </li>
   </ol>
@@ -52,14 +61,14 @@
 
 This project is a school project for an E-Commerce site in PHP. We started with a site for buying and selling online cards (eg Pokemon, Yu-Gi-Oh! ...)
 
-### Repartition :
+### Repartition
 * Popiflut : Back
 * BaptSoulier : Front
-* Akemi-ito : BDD / Script-SQL
+* Akemi-ito : Data
 
 
 
-### All link of database (MCD) :
+### All link of database
 
 
 [![MCD][MCD]](img/MCD_BDD%20.png)

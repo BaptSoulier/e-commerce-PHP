@@ -82,7 +82,6 @@
 							 aria-expanded="false">Shop</a>
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link" href="category.php">Catégories</a></li>
-								<li class="nav-item"><a class="nav-link" href="single-product.php">Details du produit</a></li>
 								<li class="nav-item"><a class="nav-link" href="cart.php">Panier</a></li>
 								<li class="nav-item"><a class="nav-link" href="checkout.php">Paiement</a></li>
 							</ul>
@@ -94,6 +93,15 @@
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 								<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
+								<?php
+                                    // Démarrer la session
+                                    session_start();
+                                    // Vérifier si l'utilisateur est connecté
+                                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                                        echo '<li class="nav-item"><a class="nav-link" href="profil.php">Profil</a></li>';
+                                        echo '<li class="nav-item"><a class="nav-link" href="logout.php">Déconnexion</a></li>';
+                                    }
+                                ?>
 							</ul>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
@@ -193,7 +201,7 @@
 						echo '<div class="col-lg-6"  	>';
 						echo '<div class="profil-container">
 									<a class="profil">
-        								<img class="img-fluide" src="'.$photo_profil.'" alt="' . $row['Name'] . '">
+        								<img class="img-fluide" src="'.$photo_profil.'" alt="">
 									</a>';
 						echo  '</div>';
 						echo '</div>';
@@ -305,7 +313,7 @@
 						echo '<br>';
 						echo '<br>';
 						echo '<div class="col-md-12 form-group">
-								<a href="deletprofil.php">
+								<a href="deletprofil.php?email='.$email.'">
 									<button value="submit" class="primary-btn">Delete</button>
 								</a>
 							</div>';
