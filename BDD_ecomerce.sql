@@ -55,6 +55,9 @@ CREATE TABLE IF NOT EXISTS `cart` (
       KEY `fk_user_id_2` (`UID`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
+    INSERT INTO code (Code, Value, Expiration_Date, Usable)
+    VALUES ('CODE10', '10%', '2024-12-31', 1);
+
     -- --------------------------------------------------------
 
     --
