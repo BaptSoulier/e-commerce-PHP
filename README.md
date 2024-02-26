@@ -123,10 +123,17 @@ Otherwise, to connect to the database, we use this identifier
 
 
   ```sh
-  $servername = "localhost";
+  	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "bdd_php";
+  ```
+
+Finally, here are the connection logs if you wish to access the administrator account.
+
+ ```sh
+  E-Mail = "root@gmail.com";
+  password = "az";
   ```
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
