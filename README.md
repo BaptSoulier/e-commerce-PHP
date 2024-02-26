@@ -106,6 +106,9 @@ Once in phpmyadmin click on create new databse with the name below:
   Name for the database: "bdd_php"
   ```
 
+After clicking on the name of your new database, go to import and select the file "BDD_ecomerce.sql".
+Now your database is configured, just remember to stop the service when you stop working on the project.
+
 Otherwise, to connect to the database, we use this identifier
 
 
