@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `code` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `UID` int DEFAULT NULL,
   `Code` varchar(255) COLLATE utf8mb3_bin DEFAULT NULL,
+   `Value` varchar(255) COLLATE utf8mb3_bin DEFAULT NULL,
   `Nb_Use` int DEFAULT NULL,
   `Expiration_Date` date DEFAULT NULL,
   `Usable` tinyint(1) DEFAULT '0',
