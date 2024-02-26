@@ -236,8 +236,14 @@
                                     <label for="f-option6">Paypal </label>
                                     <img src="img/product/card.jpg" alt="">
                                     <div class="check"></div>
-                                </div>
-                                <p>Payez avec Paypal ou votre carte de crédit</p>
+                                        </div>
+                                  <h2>Informations de paiement</h2>
+                                    <form>
+                                        <input type="number" id="card_number" name="card_number" placeholder="Numéro de carte:" maxlength="16" required>
+                                        <input type="text" id="card_name" name="card_name" placeholder="Nom carte:" required>
+                                        <input type="text" id="expiry_date" name="expiry_date" placeholder="Date d'expiration:" maxlength="5" required>
+                                        <input type="number" id="cvv" name="cvv" placeholder="CVV" min="100" max="9999" required>
+                                    </form>    
                             </div>
                             <div class="creat_account">
                                 <input type="checkbox" id="f-option4" name="selector">
