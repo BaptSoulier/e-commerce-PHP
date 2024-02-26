@@ -136,7 +136,7 @@
 						</div>
 						<div class="col-lg-7">
 							<div class="banner-img">
-								<img class="img-fluid" src="img/Magic/HourOfDevastation_display.png" alt="">
+								<img class="img-fluid" src="img/Magic/hourOfDevastation_booster.png" alt="">
 							</div>
 						</div>
 					</div>
