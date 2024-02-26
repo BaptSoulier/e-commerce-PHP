@@ -320,13 +320,35 @@
 					} else {
 						echo 'rien ';
 					}
-
-
 				    // Fermeture de la conneexion
 					$conn->close();
 				?>
-            </div>
-        </div>
+
+			<div class="modifpro">
+   					<form>
+        				<div>
+							<input type="text" id="fname" name="fname" placeholder="Nouvelle information">
+						</div>
+   						<div>		
+							<select name="info" id="infos">
+   								<option value="Nom">Nom</option>
+    							<option value="prenom">Prenom</option>
+   								<option value="ville">Ville</option>
+    							<option value="adresse">Adresse</option>
+								<option value="codepostal">Code postal</option>
+								<option value="Tel">Téléphone</option>
+								<option value="MDP">Mot de passe</option>
+							</select>
+						</div>
+						<div>
+							<button type="button" onclick="deleteUser()">Delete</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 			<!-- start footer  -->
             <footer class="footer-area section_gap">
                 <div class="container">
