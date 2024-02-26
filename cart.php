@@ -160,6 +160,9 @@
             $query_profile = "SELECT ID FROM profil WHERE Email = '$email'";
             $result_profile = $connexion->query($query_profile);
             $total = 0;
+
+
+
             echo '<section class="cart_area">
                         <div class="container">
                             <div class="cart_inner">
@@ -202,6 +205,25 @@
                             // Afficher les détails du produit
                             $produit = $resultat->fetch_assoc();
                             $total += $produit['Price'];
+
+                            $couponCode = "";
+                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                $couponCode = $_POST["coupon_code"];
+                            }
+
+                            $query_code = "SELECT Value FROM Code WHERE Code = '$couponCode'";
+                            $result_code = $connexion->query($query_code);
+
+                            if ($result_code->num_rows > 0) {
+                                // Fetch the discount value from the result
+                                $row = $result_code->fetch_assoc();
+                                $discountValue = $row["Value"];
+
+                                // Apply the discount to the total
+                                $discountAmount = ($total * $discountValue) / 100;
+                                $total = $total - $discountAmount;
+                            }
+
                             echo '<tr>
                                 <td>
                                     <div class="media">
@@ -239,8 +261,10 @@
                                     </td>
                                     <td>
                                         <div class="cupon_text d-flex align-items-center">
-                                            <input type="text" placeholder="Coupon Code">
-                                            <a class="primary-btn" href="#">Apply</a>
+                                            <form action="" method="post">
+                                                <input type="text" name="coupon_code" placeholder="Coupon Code">
+                                                <button type="submit" class="primary-btn">Apply</button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
@@ -277,7 +301,10 @@
             </div>
                 </section>';
 
-            // Fermer la connexion à la base de données
+
+
+
+        // Fermer la connexion à la base de données
             $connexion->close();
         } else {
             echo "Utilisateur non connecté.";
