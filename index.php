@@ -1,3 +1,7 @@
+<?php
+	// Démarrer la session
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -75,22 +79,56 @@
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 										<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
+
 										<?php
-                                            // Démarrer la session
-                                            session_start();
 
                                             // Vérifier si l'utilisateur est connecté
                                             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                                                 echo '<li class="nav-item"><a class="nav-link" href="profil.php">Profil</a></li>';
                                                 echo '<li class="nav-item"><a class="nav-link" href="logout.php">Déconnexion</a></li>';
                                             }
+											// Vérifier si l'utilisateur est connecté
+											if(isset($_SESSION['username'])) {
+											    // Informations de connexion à la base de données
+											    $serveur = "localhost";
+											    $utilisateur = "root";
+											    $motdepasse = "";
+											    $basededonnees = "bdd_php";
+
+											    // Connexion à la base de données
+											    $connexion = new mysqli($serveur, $utilisateur, $motdepasse, $basededonnees);
+
+											    // Vérifier la connexion
+											    if ($connexion->connect_error) {
+											        die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+											    }
+
+											    // Récupérer l'email de l'utilisateur à partir de la session
+											    $email = $_SESSION['username'];
+
+											    // Requête SQL pour obtenir les informations de l'utilisateur
+											    $query_user = "SELECT * FROM profil WHERE Email = '$email'";
+											    $result_user = $connexion->query($query_user);
+												
+
+											    // Vérifier si l'utilisateur est un administrateur
+											    if ($result_user->num_rows > 0) {
+													$row_user = $result_user->fetch_assoc();
+													if($row_user["Admin"] == 1) {
+														echo '<li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>';
+													}
+											    }
+
+											    // Fermer la connexion à la base de données
+											    $connexion->close();
+											}
                                         ?>
 									</ul>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-							<?php
+								<?php
 									if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 										echo '<li class="nav-item"><a href="cart.php" class="cart"><span class="ti-bag"></span></a></li>';
 									} else {

@@ -1,3 +1,7 @@
+<?php
+	// Démarrer la session
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -75,8 +79,6 @@
 										<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 										<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
 										<?php
-                                            // Démarrer la session
-                                            session_start();
 
                                             // Vérifier si l'utilisateur est connecté
                                             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
@@ -130,18 +132,48 @@
         </div>
     </section>
     <!-- End Banner -->
+	<<?php
+	// Informations de connexion à la base de données
+	$serveur = "localhost";
+	$utilisateur = "root";
+	$motdepasse = "";
+	$basededonnees = "bdd_php";
 
-    <div class="admin">
-   
-    <div class="user-info">
-        <p><strong>Prenom:</strong> Baba</p>
-    </div>
-    <div class="user-info">
-        <p><strong>Nom</strong> Sousou</p>
-    </div>
-    
-    <button type="button" onclick="deleteUser()">Delete</button>
-</div>
+	// Connexion à la base de données
+	$connexion = new mysqli($serveur, $utilisateur, $motdepasse, $basededonnees);
+
+	// Vérifier la connexion
+	if ($connexion->connect_error) {
+	    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+	}
+
+	// Requête SQL pour récupérer tous les utilisateurs dans la table profil
+	$query = "SELECT * FROM profil";
+	$result = $connexion->query($query);
+
+	// Vérifier si des utilisateurs ont été trouvés
+	if ($result && $result->num_rows > 0) {
+	    // Parcourir chaque utilisateur et afficher les informations
+	    while($row = $result->fetch_assoc()) {
+	        echo '<div class="admin">';
+	        echo '<div class="user-info">';
+	        echo '<p><strong>ID:</strong>' . $row['ID'] . '</p>';
+	        echo '</div>';
+	        echo '<div class="user-info">';
+	        echo '<p><strong>Prénom:</strong> ' . $row['First_name'] . '</p>';
+			echo '</div>';
+	        echo '<a href="deletprofil.php?email='.$row['Email'].'">
+						<button value="submit" class="primary-btn">Delete</button>
+					</a>
+				</div>';
+	    }
+	} else {
+	    echo "Aucun utilisateur trouvé.";
+	}
+
+	// Fermer la connexion à la base de données
+	$connexion->close();
+	?>
 
 
 
