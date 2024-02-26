@@ -205,12 +205,12 @@
                             <h2>Votre panier</h2>
                             <ul class="list">
                                 <li><a href="#">Product <span>Total</span></a></li>
-                                <li><a href="#">Addidas #354629 <span class="middle">x 01</span> <span class="last">160.00</span></a></li>
+                                <li><a href="#">booster pokemon <span class="middle">x 01</span> <span class="last">20.00</span></a></li>
                             </ul>
                             <ul class="list list_2">
-                                <li><a href="#">Total <span>$160.00</span></a></li>
+                                <li><a href="#">Total <span>$20.00</span></a></li>
                                 <li><a href="#">Frais de livraison: <span> $50.00</span></a></li>
-                                <li><a href="#">Total <span>$210.00</span></a></li>
+                                <li><a href="#">Total <span>$30.00</span></a></li>
                             </ul>
                             <div class="payment_item">
                                 <div class="radion_btn">
