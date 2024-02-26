@@ -21,14 +21,6 @@
     -- Base de données : `bdd_php`
     --
 
--- Suppression des contraintes étrangères (si elles existent)
-    ALTER TABLE `cart` DROP FOREIGN KEY IF EXISTS `fk_product_id_2`, DROP FOREIGN KEY IF EXISTS `fk_user_id_3`;
-    ALTER TABLE `code` DROP FOREIGN KEY IF EXISTS `fk_user_id_2`;
-    ALTER TABLE `order_history` DROP FOREIGN KEY IF EXISTS `fk_cart_id_1`;
-    ALTER TABLE `payment` DROP FOREIGN KEY IF EXISTS `fk_user_id_4`;
-    ALTER TABLE `rating` DROP FOREIGN KEY IF EXISTS `fk_user_id_6`, DROP FOREIGN KEY IF EXISTS `fk_product_id_1`;
-    ALTER TABLE `wishlist` DROP FOREIGN KEY IF EXISTS `fk_product_id_5`, DROP FOREIGN KEY IF EXISTS `fk_user_id_5`;
-
     --
     -- Structure de la table `cart`
     --
