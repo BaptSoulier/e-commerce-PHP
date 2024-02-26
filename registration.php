@@ -68,7 +68,7 @@
 						<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
+						<li class="nav-item"><a href="cart.php" class="cart"><span class="ti-bag"></span></a></li>
 						<li class="nav-item">
 							<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 						</li>
@@ -111,32 +111,25 @@
 				<h3>Informations</h3>
 				<form class="row contact_form" action="#" method="post" novalidate="novalidate">
 					<div class="col-md-6 form-group p_star">
-						<input type="text" class="form-control" id="first" name="first">
-						<span class="placeholder" placeholder="Prénom"></span>
+					<input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
 					</div>
 					<div class="col-md-6 form-group p_star">
-						<input type="text" class="form-control" id="last" name="last">
-						<span class="placeholder" data-placeholder="Nom"></span>
+					<input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
 					</div>
 					<div class="col-md-6 form-group p_star">
-						<input type="text" class="form-control" id="number" name="number">
-						<span class="placeholder" data-placeholder="Numéro de téléphone"></span>
+					<input type="text" class="form-control" id="tel" name="tel" placeholder="Téléphone">
 					</div>
 					<div class="col-md-6 form-group p_star">
-						<input type="text" class="form-control" id="email" name="email">
-						<span class="placeholder" data-placeholder="Email"></span>
+					<input type="text" class="form-control" id="email" name="email" placeholder="Email">
 					</div>
 					<div class="col-md-12 form-group p_star">
-						<input type="text" class="form-control" id="add1" name="add1">
-						<span class="placeholder" data-placeholder="Pays"></span>
+					<input type="text" class="form-control" id="pays" name="pays" placeholder="Pays">
 					</div>
 					<div class="col-md-12 form-group p_star">
-						<input type="text" class="form-control" id="add2" name="add2">
-						<span class="placeholder" data-placeholder="Adresse"></span>
+					<input type="text" class="form-control" id="add" name="add" placeholder="Adresse">
 					</div>
 					<div class="col-md-12 form-group p_star">
-						<input type="text" class="form-control" id="city" name="city">
-						<span class="placeholder" data-placeholder="Ville"></span>
+						<input type="text" class="form-control" id="ville" name="ville" placeholder="Ville">
 					</div>
 					<div class="col-md-12 form-group">
 						<input type="text" class="form-control" id="zip" name="zip" placeholder="Code Postal">
@@ -167,7 +160,6 @@
 					    $email = $_POST['email'];
 						$photo_profil = $_POST['PP'];
 					    $mot_de_passe = $_POST['PW'];
-						$birthday = $_POST['birth'];
 						$telephone = $_POST['number'];
 					    $pays = $_POST['add1'];
 					    $adresse = $_POST['add2'];
