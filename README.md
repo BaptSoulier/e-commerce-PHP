@@ -37,7 +37,7 @@
 	    <li><a href="#repartition">Repartition</a></li>
 	</ul>
 	    <ul>
-	    <li><a href="#all-link-of-database-(MCD)">All link of database (MCD)</a></li>
+	    <li><a href="#all-link-of-database">All link of database (MCD)</a></li>
 	</ul>
     </li>
     <li>
@@ -65,7 +65,7 @@ This project is a school project for an E-Commerce site in PHP. We started with 
 
 
 
-### All link of database (MCD)
+### All link of database
 
 
 [![MCD][MCD]](img/MCD_BDD%20.png)
