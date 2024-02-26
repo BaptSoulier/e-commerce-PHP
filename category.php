@@ -250,8 +250,12 @@
 						        echo '<h6>' . $row['Price'] . '€</h6>';
 						        echo '</div>';
 						        echo '<div class="prd-bottom">';
-						        echo '<a href="" class="social-info">';
-						        echo '<span class="ti-bag"></span>';
+								if(isset($_SESSION['username'])) {
+						        	echo '<a href="addcart.php?pid='.$row['ID'].'&pq=1" class="social-info">';
+								} else {
+									echo '<a href="" class="social-info">';
+								}
+								echo '<span class="ti-bag"></span>';
 						        echo '<p class="hover-text">add to bag </p>';
 						        echo '</a>';
 						        echo '<a href="" class="social-info">';

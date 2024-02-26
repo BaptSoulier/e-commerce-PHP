@@ -161,14 +161,13 @@
 					            echo '<li><a href="#"><span>Disponibilité</span> : En Stock</a></li>';
 					            echo '</ul>';
 					            echo '<p>'.$row["Description"].'</p>';
-					            echo '<div class="product_count">';
-					            echo '<label for="qty">Quantity:</label>';
-					            echo '<input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">';
-					            echo '<button onclick="var result = document.getElementById(\'sst\'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>';
-					            echo '<button onclick="var result = document.getElementById(\'sst\'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>';
-					            echo '</div>';
+								echo '<br>';
 					            echo '<div class="card_area d-flex align-items-center">';
-					            echo '<a class="primary-btn" href="cart.php">Add to Cart</a>';
+								if(isset($_SESSION['username'])) {
+									echo '<a class="primary-btn" href="addcart.php?pid='.$row['ID'].'&pq=1">Add to Cart</a>';
+								} else {
+									echo '<a class="primary-btn" href="login.php">Add to Cart</a>';
+								}
 					            echo '<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>';
 					            echo '<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>';
             					echo '</div>';

@@ -115,134 +115,159 @@
     <!-- End Banner -->
 
     <!--================ Cart =================-->
-    <section class="cart_area">
-        <div class="container">
-            <div class="cart_inner">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Produit</th>
-                                <th scope="col">Prix</th>
-                                <th scope="col">Quantité</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
+
+    <!--================End Cart =================-->
+    <?php
+        // Démarrer la session
+        session_start();
+
+        // Vérifier si l'utilisateur est connecté
+        if(isset($_SESSION['username'])) {
+            // Informations de connexion à la base de données
+            $serveur = "localhost";
+            $utilisateur = "root";
+            $motdepasse = "";
+            $basededonnees = "bdd_php";
+
+            // Connexion à la base de données
+            $connexion = new mysqli($serveur, $utilisateur, $motdepasse, $basededonnees);
+
+            // Vérifier la connexion
+            if ($connexion->connect_error) {
+                die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+            }
+
+            // Récupérer l'email de l'utilisateur à partir de la session
+            $email = $_SESSION['username'];
+
+            // Requête SQL pour obtenir l'UID du profil de l'utilisateur
+            $query_profile = "SELECT ID FROM profil WHERE Email = '$email'";
+            $result_profile = $connexion->query($query_profile);
+            $total = 0;
+            echo '<section class="cart_area">
+                        <div class="container">
+                            <div class="cart_inner">
+                            <div class="table-responsive">
+                            <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Produit</th>
+                                    <th scope="col">Prix</th>
+                                    <th scope="col">Quantité</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>';
+            // Vérifier si la requête a réussi
+            if ($result_profile && $result_profile->num_rows > 0) {
+                // Récupérer l'UID du profil de l'utilisateur
+                $row_profile = $result_profile->fetch_assoc();
+                $uid = $row_profile['ID'];
+
+                // Requête SQL pour obtenir les "cart" avec le même UID
+                $query_carts = "SELECT * FROM cart WHERE UID = '$uid'";
+                $result_carts = $connexion->query($query_carts);
+
+                // Vérifier si des "carts" ont été trouvés
+                if ($result_carts && $result_carts->num_rows > 0) {
+                    // Afficher les informations des "carts"
+                    while($row_cart = $result_carts->fetch_assoc()) {
+                        // Afficher d'autres informations du "cart" si nécessaire
+                        // Échapper les données pour éviter les injections SQL
+                        $id_produit = $connexion->real_escape_string($row_cart['PID']);
+
+                        // Requête SQL pour récupérer le produit avec l'ID donné
+                        $query = "SELECT * FROM product WHERE ID = '$id_produit'";
+                        $resultat = $connexion->query($query);
+
+                        // Vérifier si le produit a été trouvé
+                        if ($resultat && $resultat->num_rows > 0) {
+
+                            // Afficher les détails du produit
+                            $produit = $resultat->fetch_assoc();
+                            $total += $produit['Price'];
+                            echo '<tr>
                                 <td>
                                     <div class="media">
-                                        <div class="d-flex">
-                                            <img src="img/product/p6.jpg" alt="">
-                                        </div>
                                         <div class="media-body">
-                                            <p>#354629</p>
+                                            <p>'.$produit['Name'].'</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <h5>$160.00</h5>
+                                    <h5>$'.$produit['Price'].'</h5>
                                 </td>
                                 <td>
-                                    <div class="product_count">
-                                        <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                            class="input-text qty">
-                                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                            class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                            class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                    </div>
+                                    <h5>'.$row_cart['Quantity'].'</h5>
                                 </td>
                                 <td>
-                                    <h5>$160.00</h5>
+                                    <h5>$'.$produit['Price'].'</h5>
                                 </td>
-                            </tr>
-                            <tr class="bottom_button">
-                                <td>
-                                    <a class="gray_btn" href="#">Update Cart</a>
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <div class="cupon_text d-flex align-items-center">
-                                        <input type="text" placeholder="Coupon Code">
-                                        <a class="primary-btn" href="#">Apply</a>
-                                        <a class="gray_btn" href="#">Close Coupon</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <h5>Total</h5>
-                                </td>
-                                <td>
-                                    <h5>$160.00</h5>
-                                </td>
-                            </tr>
-                            <tr class="shipping_area">
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <h5>Livraison</h5>
-                                </td>
-                                <td>
-                                    <div class="shipping_box">
-                                        <ul class="list">
-                                            <li><a href="#">En 3 à 4 jours: $5.00</a></li>
-                                            <li><a href="#">En magasin : 0$</a></li>
-                                            <li><a href="#">En 24h: $10.00</a></li>
-                                            <li class="active"><a href="#">Normal à domicile: $2.00</a></li>
-                                        </ul>
-                                        <h6>Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
-                                        <select class="shipping_select">
-                                            <option value="1">France</option>
-                                            <option value="2">Suisse</option>
-                                            <option value="4">Espagne</option>
-                                            <input type="text" placeholder="Adresse">
-                                        
-                                        <input type="text" placeholder="Code Postal">
-                                        <a class="gray_btn" href="#">Mettre à jour les details</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="out_button_area">
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-                                    <div class="checkout_btn_inner d-flex align-items-center">
-                                        <a class="gray_btn" href="category.php">Continue Shopping</a>
-                                        <a class="primary-btn" href="checkout.php">Paiement</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            </tr>';
+                        } else {
+                            echo "Aucun produit trouvé avec cet ID.";
+                        }
+                    }
+                } else {
+                    echo "Aucun cart trouvé pour cet utilisateur.";
+                }
+            } else {
+                echo "Profil de l'utilisateur non trouvé.";
+            }
+            echo '<tr class="bottom_button">
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <div class="cupon_text d-flex align-items-center">
+                                            <input type="text" placeholder="Coupon Code">
+                                            <a class="primary-btn" href="#">Apply</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <h5>Total</h5>
+                                    </td>
+                                    <td>
+                                        <h5>$'.$total.'</h5>
+                                    </td>
+                                </tr>
+                                <tr class="out_button_area">
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <div class="checkout_btn_inner d-flex align-items-center">
+                                            <a class="gray_btn" href="category.php">Continue Shopping</a>
+                                            <a class="primary-btn" href="checkout.php">Paiement</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--================End Cart =================-->
+                </section>';
+
+            // Fermer la connexion à la base de données
+            $connexion->close();
+        } else {
+            echo "Utilisateur non connecté.";
+        }
+?>
+
 
  <!-- start footer -->
 <footer class="footer-area section_gap">
