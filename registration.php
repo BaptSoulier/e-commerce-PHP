@@ -63,6 +63,16 @@
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 								<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
+								<?php
+                                            // Démarrer la session
+                                            session_start();
+
+                                            // Vérifier si l'utilisateur est connecté
+                                            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                                                echo '<li class="nav-item"><a class="nav-link" href="profil.php">Profil</a></li>';
+                                                echo '<li class="nav-item"><a class="nav-link" href="logout.php">Déconnexion</a></li>';
+                                            }
+                                        ?>
 							</ul>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
@@ -111,10 +121,10 @@
 				<h3>Informations</h3>
 				<form class="row contact_form" action="#" method="post" novalidate="novalidate">
 					<div class="col-md-6 form-group p_star">
-					<input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
+					<input type="text" class="form-control" id="first" name="first" placeholder="Prénom">
 					</div>
 					<div class="col-md-6 form-group p_star">
-					<input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+					<input type="text" class="form-control" id="last" name="last" placeholder="Nom">
 					</div>
 					<div class="col-md-6 form-group p_star">
 					<input type="text" class="form-control" id="tel" name="tel" placeholder="Téléphone">
@@ -160,11 +170,11 @@
 					    $email = $_POST['email'];
 						$photo_profil = $_POST['PP'];
 					    $mot_de_passe = $_POST['PW'];
-						$telephone = $_POST['number'];
-					    $pays = $_POST['add1'];
-					    $adresse = $_POST['add2'];
+						$telephone = $_POST['tel'];
+					    $pays = $_POST['pays'];
+					    $adresse = $_POST['add'];
 						$code_postal = $_POST['zip'];
-					    $ville = $_POST['city'];
+					    $ville = $_POST['ville'];
 					    $rester_connecte = isset($_POST['selector']) ? 'Oui' : 'Non';
 
 						$mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);

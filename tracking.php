@@ -65,6 +65,16 @@
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 										<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
+										<?php
+                                            // Démarrer la session
+                                            session_start();
+
+                                            // Vérifier si l'utilisateur est connecté
+                                            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                                                echo '<li class="nav-item"><a class="nav-link" href="profil.php">Profil</a></li>';
+                                                echo '<li class="nav-item"><a class="nav-link" href="logout.php">Déconnexion</a></li>';
+                                            }
+                                        ?>
 									</ul>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
