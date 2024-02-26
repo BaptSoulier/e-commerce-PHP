@@ -146,7 +146,7 @@
 						<ul class="list">
 							<li><a href="#"><span>Numéro de commande</span> : 60235</a></li>
 							<li><a href="#"><span>Date</span> : 26/01/2024</a></li>
-							<li><a href="#"><span>Total</span> : 210€</a></li>
+							<li><a href="#"><span>Total</span> : 100€</a></li>
 							<li><a href="#"><span>Methode de paiement</span> : Paypal</P></a></li>
 						</ul>
 					</div>
@@ -188,13 +188,13 @@
 						<tbody>
 							<tr>
 								<td>
-									<p>Addidas #354629</p>
+									<p>Booster pokemon</p>
 								</td>
 								<td>
-									<h5>x 01</h5>
+									<h5>x 03</h5>
 								</td>
 								<td>
-									<p>160.00€</p>
+									<p>30€</p>
 								</td>
 							</tr>
 							<tr>
@@ -205,7 +205,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>160.00€</p>
+									<p>90.00€</p>
 								</td>
 							</tr>
 							<tr>
@@ -216,7 +216,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>50.00€</p>
+									<p>10.00€</p>
 								</td>
 							</tr>
 							<tr>
@@ -227,7 +227,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>210.00€</p>
+									<p>100.00€</p>
 								</td>
 							</tr>
 						</tbody>
