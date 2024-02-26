@@ -111,8 +111,8 @@
 								<h1>Pokemon<br>New Collection!</h1>
 								<p>Découvrez le booster PlasmaBlast !</p>
 								<div class="add-bag d-flex align-items-center">
-									<a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-									<span class="add-text text-uppercase">Add to Bag</span>
+									<a class="add-btn" href="product.php?id=0"><span class="lnr lnr-cross"></span></a>
+									<span class="add-text text-uppercase">view More</span>
 								</div>
 							</div>
 						</div>
@@ -129,32 +129,14 @@
 								<h1>Magic<br>New Collection!</h1>
 								<p>Découvrez le nouveau booster Magic</p>
 								<div class="add-bag d-flex align-items-center">
-									<a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
-									<span class="add-text text-uppercase">Add to Bag</span>
+									<a class="add-btn" href="product.php?id=15"><span class="lnr lnr-cross"></span></a>
+									<span class="add-text text-uppercase">view More</span>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-7">
 							<div class="banner-img">
 								<img class="img-fluid" src="img/Magic/HourOfDevastation_display.png" alt="">
-							</div>
-						</div>
-					</div>
-
-					<div class="row single-slide">
-						<div class="col-lg-5">
-							<div class="banner-content">
-								<h1>Yu-Gi-Oh <br>Collection</h1>
-								<p>Le booster Vanguard en stock</p>
-								<div class="add-bag d-flex align-items-center">
-									<a class="add-btn" href="#"><span class="lnr lnr-cross"></span></a>
-									<span class="add-text text-uppercase">Add to Bag</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							<div class="banner-img">
-								<img class="img-fluid" src="img/Yu-Gi-Oh/Vanguard_display.png" alt="">
 							</div>
 						</div>
 					</div>
