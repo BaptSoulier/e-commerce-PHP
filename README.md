@@ -91,14 +91,35 @@ follow these simple example steps.
 
 Steps required to make the project work
 
+#### Instalaton 
+
+We recommend that you use xampp to manage the data base 
+
+[![xampp][xampp-img]][xampp-url]
+
+Once xampp is installed, start the appache and Mysql services and go to the Mysql admin page.
+
+Once in phpmyadmin click on create new databse with the name below:
+
+
   ```sh
-  Username = root
-  Password = ❌
-  Required name for the database: " bdd_php "
+  Name for the database: "bdd_php"
   ```
 
+Otherwise, to connect to the database, we use this identifier
+
+
+  ```sh
+  $servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "bdd_php";
+  ```
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[xampp-img]: img/xampp.png
+[xampp]: https://www.apachefriends.org/fr/download.html
 
 [contributors-shield]: https://github.com/BaptSoulier/e-commerce-PHP/graphs/contributors
 [contributors-url]: https://github.com/BaptSoulier/e-commerce-PHP/graphs/contributors
