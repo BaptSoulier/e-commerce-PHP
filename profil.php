@@ -1,7 +1,3 @@
-<?php
-	// Démarrer la session
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
