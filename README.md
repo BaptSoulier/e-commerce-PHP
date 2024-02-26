@@ -31,9 +31,11 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
-	      <li><a href="#repartition">Repartition</a></li>	
+        <li><a href="#built-with">Built With</a></li>	
       </ul>
+	<ul>
+	    <li><a href="#repartition">Repartition</a></li>
+	</ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
