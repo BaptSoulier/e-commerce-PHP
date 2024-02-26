@@ -54,8 +54,20 @@
 									 aria-expanded="false">Shop</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="category.php">Catégories</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="cart.php">Panier</a></li>
-										<li class="nav-item"><a class="nav-link" href="checkout.php">Paiement</a></li>
+                                        <?php
+											if(isset($_SESSION['username'])) {
+												echo '<li class="nav-item"><a class="nav-link" href="cart.php">Panier</a></li>';
+											} else {
+												echo '<li class="nav-item"><a class="nav-link" href="login.php">Panier</a></li>';
+											}
+										?>
+										<?php
+											if(isset($_SESSION['username'])) {
+												echo '<li class="nav-item"><a class="nav-link" href="checkout.php">Paiement</a></li>';
+											} else {
+												echo '<li class="nav-item"><a class="nav-link" href="login.php">Paiement</a></li>';
+											}
+										?>
 									</ul>
 								</li>
 								</li>
