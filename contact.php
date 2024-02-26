@@ -120,9 +120,10 @@
 	<!--================Contact =================-->
 	<section class="contact_area section_gap_bottom">
 		<div class="container">
-			<div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-			 data-mlat="40.701083" data-mlon="-74.1522848">
+			<div id="mapBox" class="mapBox" data-lat="48.8566" data-lon="2.3522" data-zoom="13" data-info="Paris, France"
+    			data-mlat="48.8566" data-mlon="2.3522">
 			</div>
+
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="contact_info">
@@ -138,13 +139,13 @@
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-envelope"></i>
-							<h6><a href="#">BDMClothing@ynov.com</a></h6>
+							<h6><a href="#">BDMCommercial@ynov.com</a></h6>
 							<p>Posez nous votre question n'importe quand !</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-9">
-					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+					<form class="row contact_form" action="mailto:baptiste.soulier@ynov.com" method="post" id="contactForm" novalidate="novalidate">
 						<div class="col-md-6">
 							<div class="form-group">
 								<input type="text" class="form-control" id="name" name="name" placeholder="Nom" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nom'">
