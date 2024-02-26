@@ -1,3 +1,7 @@
+<?php
+	// Démarrer la session
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -28,6 +32,30 @@
 	<link rel="stylesheet" href="css/nouislider.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
+
+	<style>
+		.profil-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.profil {
+			display: inline-block;
+			overflow: hidden;
+			border-radius: 50%;
+			width: 200px;
+			height: 200px;
+		}
+
+		.profil img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	</style>	
 </head>
 
 <body id="category">
@@ -38,7 +66,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light main_box">
 			<div class="container">
 				
-				<a class="navbar-brand logo_h" href="index.html"><img src="img/fav.png" alt=""></a>
+				<a class="navbar-brand logo_h" href="index.php"><img src="img/fav.png" alt=""></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="icon-bar"></span>
@@ -48,15 +76,15 @@
 				
 				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 					<ul class="nav navbar-nav menu_nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
 						<li class="nav-item submenu dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 							 aria-expanded="false">Shop</a>
 							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="category.html">Catégories</a></li>
-								<li class="nav-item"><a class="nav-link" href="single-product.html">Details du produit</a></li>
-								<li class="nav-item"><a class="nav-link" href="cart.html">Panier</a></li>
-								<li class="nav-item"><a class="nav-link" href="checkout.html">Paiement</a></li>
+								<li class="nav-item"><a class="nav-link" href="category.php">Catégories</a></li>
+								<li class="nav-item"><a class="nav-link" href="single-product.php">Details du produit</a></li>
+								<li class="nav-item"><a class="nav-link" href="cart.php">Panier</a></li>
+								<li class="nav-item"><a class="nav-link" href="checkout.php">Paiement</a></li>
 							</ul>
 						</li>
 						</li>
@@ -64,11 +92,11 @@
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 							 aria-expanded="false">Compte</a>
 							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-								<li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
+								<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+								<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
 							</ul>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
@@ -99,8 +127,8 @@
 				<div class="col-first">
 					<h1>Profil</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="category.html">Profil</a>
+						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="category.php">Profil</a>
 					</nav>
 				</div>
 			</div>
@@ -111,14 +139,184 @@
         <div class="container">
             <div class="profile">
                 <h2>User Profile</h2>
-                <div class="avatar">
-                    <img src="xxxx" alt="Avatar">
-                </div>
-                <div class="user-info">
-                    <p><strong>Name:</strong> xxxxxxxxxxxxx</p>
-                    <p><strong>Email:</strong> xxxxxxxxxxxxx</p>
-                    <p><strong>Address:</strong> xxxxxxxxxxxxx</p>
-                </div>
+                
+
+				<?php
+				    // Connexion à la base de données (à remplacer avec vos propres informations de connexion)
+				    $servername = "localhost";
+				    $username = "root";
+				    $password = "";
+				    $dbname = "bdd_php";
+
+					$semail = $_SESSION['username'];
+				    // Create connection
+					$conn = new mysqli($servername, $username, $password, $dbname);
+
+					// Check connection
+					if ($conn->connect_error) {
+					    die("Connection failed: " . $conn->connect_error);
+					}
+
+					// SQL query to retrieve user information
+					$sql = "SELECT First_name, Last_name, Email, PP, Pw, Phone, Country, Adress, Postal_code, City FROM profil WHERE Email = '$semail'"; // Assuming user_id 1 for demonstration, change as needed
+					
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
+					    // Fetch data from the result set
+					    $row = $result->fetch_assoc();
+					    // Assign retrieved values to variables
+					    $prenom = $row["First_name"];
+					    $nom = $row["Last_name"];
+					    $email = $row["Email"];
+					    $photo_profil = $row["PP"];
+					    $mot_de_passe = $row["Pw"];
+					    $telephone = $row["Phone"];
+					    $pays = $row["Country"];
+					    $adresse = $row["Adress"];
+					    $code_postal = $row["Postal_code"];
+					    $ville = $row["City"];
+					    // Output retrieved information
+						echo '<div class="product_image_area">';
+						echo '<div class="container">';
+
+						echo '<div class="row s_product_inner">';
+						echo '<div class="col-lg-6">';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Prénom</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$prenom.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '<div class="col-lg-6"  	>';
+						echo '<div class="profil-container">
+									<a class="profil">
+        								<img class="img-fluide" src="'.$photo_profil.'" alt="' . $row['Name'] . '">
+									</a>';
+						echo  '</div>';
+						echo '</div>';
+						echo '</div>';
+
+						echo '<br>';
+						echo '<br>';
+						echo '<br>';
+
+						echo '<div class="row s_product_inner">';
+						echo '<div class="col-lg-6">';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Nom</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$nom.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '<div class="col-lg-6"  	>';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Email</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$email.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '</div>';
+
+						echo '<div class="row s_product_inner">';
+						echo '<div class="col-lg-6">';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Mot de passe</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$mot_de_passe.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '<div class="col-lg-6"  	>';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Téléphone</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$telephone.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '</div>';
+
+						echo '<div class="row s_product_inner">';
+						echo '<div class="col-lg-6">';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Ville</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$ville.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '<div class="col-lg-6"  	>';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Pays</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$pays.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '</div>';
+						
+						echo '<div class="row s_product_inner">';
+						echo '<div class="col-lg-6">';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Adresse</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$adresse.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '<div class="col-lg-6"  	>';
+						echo '<div class="card">
+        							<div class="card-header">
+        								<h4>Code postal</h4>
+        							</div>
+        							<div class="card-body">
+        								<p>'.$code_postal.'</p>
+        							</div>
+        						</div>';
+						echo '</div>';
+						echo '</div>';
+
+						echo '</div>';
+						echo '</div>';
+
+
+
+
+
+						echo '<br>';
+						echo '<br>';
+						echo '<div class="col-md-12 form-group">
+								<a href="deletprofil.php">
+									<button value="submit" class="primary-btn">Delete</button>
+								</a>
+							</div>';
+					} else {
+						echo 'rien ';
+					}
+
+
+				    // Fermeture de la conneexion
+					$conn->close();
+				?>
             </div>
         </div>
 			<!-- start footer  -->
