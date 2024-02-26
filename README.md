@@ -34,7 +34,7 @@
         <li><a href="#built-with">Built With</a></li>	
       </ul>
 	<ul>
-	    <li><a href="#repartition-:">Repartition</a></li>
+	    <li><a href="#repartition">Repartition</a></li>
 	</ul>
     </li>
     <li>
@@ -55,7 +55,7 @@
 
 This project is a school project for an E-Commerce site in PHP. We started with a site for buying and selling online cards (eg Pokemon, Yu-Gi-Oh! ...)
 
-### Repartition :
+### Repartition
 * Popiflut : Back
 * BaptSoulier : Front
 * Akemi-ito : BDD / Script-SQL
