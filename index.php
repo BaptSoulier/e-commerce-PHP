@@ -147,7 +147,7 @@
 								<h1>Yu-Gi-Oh <br>Collection</h1>
 								<p>Le booster Vanguard en stock</p>
 								<div class="add-bag d-flex align-items-center">
-									<a class="add-btn" href="admin.php"><span class="lnr lnr-cross"></span></a>
+									<a class="add-btn" href="#"><span class="lnr lnr-cross"></span></a>
 									<span class="add-text text-uppercase">Add to Bag</span>
 								</div>
 							</div>
