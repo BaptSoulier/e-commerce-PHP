@@ -36,6 +36,9 @@
 	<ul>
 	    <li><a href="#repartition">Repartition</a></li>
 	</ul>
+	    <ul>
+	    <li><a href="#all-link-of-database-(MCD)">All link of database (MCD)</a></li>
+	</ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -58,11 +61,11 @@ This project is a school project for an E-Commerce site in PHP. We started with 
 ### Repartition
 * Popiflut : Back
 * BaptSoulier : Front
-* Akemi-ito : BDD / Script-SQL
+* Akemi-ito : Data
 
 
 
-### All link of database (MCD) :
+### All link of database (MCD)
 
 
 [![MCD][MCD]](img/MCD_BDD%20.png)
