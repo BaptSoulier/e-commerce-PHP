@@ -1,7 +1,3 @@
-<?php
-	// Démarrer la session
-	session_start();
-?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -81,6 +77,8 @@
 									<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
 									<?php
+                                            // Démarrer la session
+                                            session_start();
 
                                             // Vérifier si l'utilisateur est connecté
                                             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
@@ -139,10 +137,9 @@
 	<!--================Contact =================-->
 	<section class="contact_area section_gap_bottom">
 		<div class="container">
-			<div id="mapBox" class="mapBox" data-lat="48.8566" data-lon="2.3522" data-zoom="13" data-info="Paris, France"
-    			data-mlat="48.8566" data-mlon="2.3522">
+			<div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+			 data-mlat="40.701083" data-mlon="-74.1522848">
 			</div>
-
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="contact_info">
@@ -158,13 +155,13 @@
 						</div>
 						<div class="info_item">
 							<i class="lnr lnr-envelope"></i>
-							<h6><a href="#">BDMCommercial@ynov.com</a></h6>
+							<h6><a href="#">BDMClothing@ynov.com</a></h6>
 							<p>Posez nous votre question n'importe quand !</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-9">
-					<form class="row contact_form" action="mailto:baptiste.soulier@ynov.com" method="post" id="contactForm" novalidate="novalidate">
+					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
 						<div class="col-md-6">
 							<div class="form-group">
 								<input type="text" class="form-control" id="name" name="name" placeholder="Nom" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nom'">
