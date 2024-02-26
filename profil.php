@@ -201,7 +201,7 @@
 						echo '<div class="col-lg-6"  	>';
 						echo '<div class="profil-container">
 									<a class="profil">
-        								<img class="img-fluide" src="'.$photo_profil.'" alt="' . $row['Name'] . '">
+        								<img class="img-fluide" src="'.$photo_profil.'" alt="">
 									</a>';
 						echo  '</div>';
 						echo '</div>';
