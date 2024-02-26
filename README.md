@@ -45,6 +45,9 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul>
+	    <ul>
+        <li><a href="#instalaton">Instalaton</a></li>
+      </ul>
     </li>
   </ol>
 </details>
