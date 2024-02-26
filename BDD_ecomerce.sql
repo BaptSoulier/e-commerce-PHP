@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
     --
 
     INSERT INTO `profil` (`ID`, `Admin`, `First_name`, `Last_name`, `Email`, `E_Verif`, `PP`, `Pw`, `birth_date`, `Phone`, `Country`, `Adress`, `Postal_code`, `City`, `Loyalty_point`, `History`) VALUES
-    (9, 1, 'djebril', 'harhad', 'djebrilharhad@gmail.com', 0, 'https://images.hdqwalls.com/download/rick-and-morty-in-another-dimension-illustration-6c-3840x2400.jpg', '$2y$10$TbyXM2/A2BisIl6UUHOFfOyi/cg4AYjN3IgKmGZVPPG1jWlmhwmP.', NULL, '0605297821', 'france', '26 rue etienne marcel', '77450', 'montry', 0, NULL);
+    (9, 1, 'djebril', 'harhad', 'root@gmail.com', 0, 'https://images.hdqwalls.com/download/rick-and-morty-in-another-dimension-illustration-6c-3840x2400.jpg', '$2y$10$TbyXM2/A2BisIl6UUHOFfOyi/cg4AYjN3IgKmGZVPPG1jWlmhwmP.', NULL, '0605297821', 'france', '26 rue etienne marcel', '77450', 'montry', 0, NULL);
 
     -- --------------------------------------------------------
 
