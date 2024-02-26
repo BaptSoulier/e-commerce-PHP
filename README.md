@@ -119,7 +119,7 @@ Otherwise, to connect to the database, we use this identifier
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [xampp-img]: img/xampp.png
-[xampp]: https://www.apachefriends.org/fr/download.html
+[xampp-url]: https://www.apachefriends.org/fr/download.html
 
 [contributors-shield]: https://github.com/BaptSoulier/e-commerce-PHP/graphs/contributors
 [contributors-url]: https://github.com/BaptSoulier/e-commerce-PHP/graphs/contributors
