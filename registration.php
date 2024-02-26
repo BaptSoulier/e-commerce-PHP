@@ -167,7 +167,6 @@
 					    $email = $_POST['email'];
 						$photo_profil = $_POST['PP'];
 					    $mot_de_passe = $_POST['PW'];
-						$birthday = $_POST['birth'];
 						$telephone = $_POST['number'];
 					    $pays = $_POST['add1'];
 					    $adresse = $_POST['add2'];
