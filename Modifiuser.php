@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])) {
     // Préparer et exécuter la requête SQL pour mettre à jour la colonne "parametre1"
     $query = "UPDATE profil SET $param = '$value' WHERE Email = '$email'";
     echo $query;
-
+ 
     // Vérifier si la mise à jour a réussi
     if ($connexion->query($query) === TRUE) {
         echo "La colonne '.$param.' a été mise à jour avec succès pour l'utilisateur avec l'e-mail $email.";
