@@ -1,7 +1,3 @@
-<?php
-	// Démarrer la session
-	session_start();
-?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -82,6 +78,8 @@
 									<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 									<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
 									<?php
+                                            // Démarrer la session
+                                            session_start();
 
                                             // Vérifier si l'utilisateur est connecté
                                             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
@@ -148,7 +146,7 @@
 						<ul class="list">
 							<li><a href="#"><span>Numéro de commande</span> : 60235</a></li>
 							<li><a href="#"><span>Date</span> : 26/01/2024</a></li>
-							<li><a href="#"><span>Total</span> : 100€</a></li>
+							<li><a href="#"><span>Total</span> : 210€</a></li>
 							<li><a href="#"><span>Methode de paiement</span> : Paypal</P></a></li>
 						</ul>
 					</div>
@@ -190,13 +188,13 @@
 						<tbody>
 							<tr>
 								<td>
-									<p>Booster pokemon</p>
+									<p>Addidas #354629</p>
 								</td>
 								<td>
-									<h5>x 03</h5>
+									<h5>x 01</h5>
 								</td>
 								<td>
-									<p>30€</p>
+									<p>160.00€</p>
 								</td>
 							</tr>
 							<tr>
@@ -207,7 +205,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>90.00€</p>
+									<p>160.00€</p>
 								</td>
 							</tr>
 							<tr>
@@ -218,7 +216,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>10.00€</p>
+									<p>50.00€</p>
 								</td>
 							</tr>
 							<tr>
@@ -229,7 +227,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>100.00€</p>
+									<p>210.00€</p>
 								</td>
 							</tr>
 						</tbody>

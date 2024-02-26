@@ -1,7 +1,3 @@
-<?php
-	// Démarrer la session
-	session_start();
-?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -93,6 +89,8 @@
 								<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 								<li class="nav-item"><a class="nav-link" href="tracking.php">Tracking</a></li>
 								<?php
+                                            // Démarrer la session
+                                            session_start();
 
                                             // Vérifier si l'utilisateur est connecté
                                             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
