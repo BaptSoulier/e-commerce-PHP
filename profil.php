@@ -319,6 +319,8 @@
 
 						echo '</div>';
 						echo '</div>';
+						echo '<br>';
+						echo '<br>';
 
     					echo '<div class="modifpro">';
     					echo '<form>';
@@ -337,16 +339,10 @@
     					echo '</select>';
     					echo '</div>';
     					echo '<div>';
-    					echo '<button type="button" onclick="deleteUser()">Delete</button>';
+    					echo '<button type="button" onclick="deleteUser()">Modifier</button>';
     					echo '</div>';
    						echo '</form>';
-    					echo '</div>';
-
-    					echo '</div>';
-    					echo '</div>';
-
-    					echo '<br>';
-   						echo '<br>';
+						echo '</div>';
 
 
 
@@ -357,6 +353,8 @@
 									<button value="submit" class="primary-btn">Delete</button>
 								</a>
 							</div>';
+						echo '</div>';
+    					echo '</div>';
 					} else {
 						echo 'rien ';
 					}
