@@ -19,7 +19,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>BDM Clothing</title>
+	<title>BDM Commercial</title>
 
 	<!--
             CSS

@@ -11,7 +11,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-	<title>BDM Clothing</title>
+	<title>BDM Commercial</title>
 
     <link rel="stylesheet" href="css/linearicons.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
