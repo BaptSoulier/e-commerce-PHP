@@ -243,22 +243,32 @@
                                 <li><a href="#">Total <span>$30.00</span></a></li>
                             </ul>
                             <div class="payment_item">
-                                <div class="radion_btn">
-                                    <input type="radio" id="f-option5" name="selector">
-                                    <label for="f-option5">Payer en magasin</label>
+                                 <div class="radion_btn">
+                                    <input type="radio" id="f-option5" name="payment-selector" onclick="showCreditCardForm(false)">
+                                    <label for="f-option5">Payer lors du retrait</label>
                                     <div class="check"></div>
                                 </div>
-                                <p>Donnez nous l'adresse du magasin .</p>
+                                <p>Donnez nous l'adresse du magasin.</p>
                             </div>
+
                             <div class="payment_item active">
                                 <div class="radion_btn">
-                                    <input type="radio" id="f-option6" name="selector">
-                                    <label for="f-option6">Paypal </label>
+                                    <input type="radio" id="paypal-option" name="payment-selector" onclick="showCreditCardForm(true)">
+                                    <label for="paypal-option">Paypal</label>
                                     <img src="img/product/card.jpg" alt="">
                                     <div class="check"></div>
                                 </div>
-                                <p>Payez avec Paypal ou votre carte de crédit</p>
+                                <h2>Informations de paiement</h2>
+                                <div id="credit-card-form" style="display:none;">
+                                    <form>
+                                        <input type="number" id="card_number" name="card_number" placeholder="Numéro de carte:" maxlength="16" required>
+                                        <input type="text" id="card_name" name="card_name" placeholder="Nom carte:" required>
+                                        <input type="text" id="expiry_date" name="expiry_date" placeholder="Date d'expiration:" maxlength="5" required>
+                                        <input type="number" id="cvv" name="cvv" placeholder="CVV" min="100" max="9999" required>
+                                    </form>    
+                                </div>
                             </div>
+
                             <div class="creat_account">
                                 <input type="checkbox" id="f-option4" name="selector">
                                 <label for="f-option4">J'accepte les </label>
@@ -270,7 +280,7 @@
                 </div>
             </div>
         </div>
-    </section>                           </div>
+    </section>                           
         
     <!--================End Checkout =================-->
 
@@ -338,6 +348,7 @@
     <script src="js/nouislider.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/paiement.js"></script>
     <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="js/gmaps.min.js"></script>
