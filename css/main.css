@@ -5599,4 +5599,40 @@ button:hover {
   background-color: #45a049;
 }
 
+.modifpro {
+  margin-top: 20px;
+}
+
+.modifpro form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modifpro form div {
+  flex: 1 0 100%; /* Occupe toute la largeur */
+  margin-bottom: 15px;
+}
+
+.modifpro form input[type="text"],
+.modifpro form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Garantit que la largeur inclut également le padding et la bordure */
+  font-size: 16px;
+}
+
+.modifpro form button {
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modifpro form button:hover {
+  background-color: darkorange;
+}
 

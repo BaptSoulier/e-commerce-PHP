@@ -33,18 +33,18 @@
     -- Structure de la table `cart`
     --
 
-    DROP TABLE IF EXISTS `cart`;
-    CREATE TABLE IF NOT EXISTS `cart` (
-      `ID` int NOT NULL AUTO_INCREMENT,
-      `UID` int DEFAULT NULL,
-      `PID` int DEFAULT NULL,
-      `Quantity` int NOT NULL,
-      PRIMARY KEY (`ID`),
-      KEY `fk_user_id_3` (`UID`),
-      KEY `fk_product_id_2` (`PID`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `UID` int DEFAULT NULL,
+  `PID` int DEFAULT NULL,
+  `Quantity` int NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `fk_user_id_3` (`UID`),
+  KEY `fk_product_id_2` (`PID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
-    -- --------------------------------------------------------
+-- --------------------------------------------------------
 
     --
     -- Structure de la table `code`
