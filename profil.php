@@ -322,7 +322,33 @@
 						echo '</div>';
 						echo '</div>';
 
+    					echo '<div class="modifpro">';
+    					echo '<form>';
+    					echo '<div>';
+    					echo '<input type="text" id="fname" name="fname" placeholder="Nouvelle information">';
+    					echo '</div>';
+    					echo '<div>';        
+    					echo '<select name="info" id="infos">';
+    					echo '<option value="Nom">Nom</option>';
+    					echo '<option value="prenom">Prenom</option>';
+    					echo '<option value="ville">Ville</option>';
+    					echo '<option value="adresse">Adresse</option>';
+   						echo '<option value="codepostal">Code postal</option>';
+    					echo '<option value="Tel">Téléphone</option>';
+    					echo '<option value="MDP">Mot de passe</option>';
+    					echo '</select>';
+    					echo '</div>';
+    					echo '<div>';
+    					echo '<button type="button" onclick="deleteUser()">Delete</button>';
+    					echo '</div>';
+   						echo '</form>';
+    					echo '</div>';
 
+    					echo '</div>';
+    					echo '</div>';
+
+    					echo '<br>';
+   						echo '<br>';
 
 
 
@@ -339,29 +365,6 @@
 				    // Fermeture de la conneexion
 					$conn->close();
 				?>
-
-			<div class="modifpro">
-   					<form>
-        				<div>
-							<input type="text" id="fname" name="fname" placeholder="Nouvelle information">
-						</div>
-   						<div>		
-							<select name="info" id="infos">
-   								<option value="Nom">Nom</option>
-    							<option value="prenom">Prenom</option>
-   								<option value="ville">Ville</option>
-    							<option value="adresse">Adresse</option>
-								<option value="codepostal">Code postal</option>
-								<option value="Tel">Téléphone</option>
-								<option value="MDP">Mot de passe</option>
-							</select>
-						</div>
-						<div>
-							<button type="button" onclick="deleteUser()">Delete</button>
-						</div>
-					</form>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
